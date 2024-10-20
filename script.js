@@ -225,21 +225,20 @@ function clearLeaderboard() {
 
 // Theme Selector
 const themeSelector = document.getElementById("theme-selector");
-document.body.classList.add("dark-mode"); // Add this line for the default theme
+
+// Set light mode as default
+document.body.classList.add("light-mode");
 
 themeSelector.addEventListener("change", () => {
   const selectedTheme = themeSelector.value;
-  console.log("Selected theme:", selectedTheme); // Log the selected theme for debugging
 
-  // Remove existing theme classes
-  document.body.classList.remove("dark-mode", "colorful-mode");
+  document.body.classList.remove("dark-mode", "colorful-mode", "light-mode"); // Remove all themes
 
-  // Add the selected theme class
   if (selectedTheme === "dark") {
     document.body.classList.add("dark-mode");
   } else if (selectedTheme === "colorful") {
     document.body.classList.add("colorful-mode");
   } else {
-    document.body.classList.remove("dark-mode", "colorful-mode"); // Default or no theme
+    document.body.classList.add("light-mode"); // Default or no theme
   }
 });
