@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Stone Paper Scissors</h1>
+      <!-- Music toggle button as an image, positioned at the top-right corner -->
+      <img
+        id="music-toggle-img"
+        src="assets/unmute.png"
+        alt="Mute Music"
+        class="music-toggle"
+      />
+
+      <!-- Combined round and mode selector on the same line -->
+      <div class="game-options">
+        <label for="rounds">Rounds:</label>
+        <select id="rounds">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+
+        <label for="game-mode">Mode:</label>
+        <select id="game-mode">
+          <option value="standard">Standard</option>
+          <option value="timed">Timed Challenge</option>
+        </select>
+
+        <!-- Theme Selector -->
+        <label for="theme-selector">Theme:</label>
+        <select id="theme-selector">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="colorful">Colorful</option>
+        </select>
+    </div>
+
+    <div id="timer-display">10</div>
+      <div class="choices">
+        <div class="choice" data-choice="stone">
+          <img src="assets/stone.png" alt="Stone" />
+        </div>
+        <div class="choice" data-choice="paper">
+          <img src="assets/paper.png" alt="Paper" />
+        </div>
+        <div class="choice" data-choice="scissors">
+          <img src="assets/scissors.png" alt="Scissors" />
+        </div>
+      </div>
+
+      <div class="result">
+        <p id="user-choice">You chose: <span></span></p>
+        <p id="computer-choice">Computer chose: <span></span></p>
+        <p id="winner">Result: <span></span></p>
+      </div>
+
+      <div class="scoreboard">
+        <p>User Wins: <span id="user-wins">0</span></p>
+        <p>Computer Wins: <span id="computer-wins">0</span></p>
+        <p>Total Games: <span id="total-games">0</span></p>
+      </div>
+
+      <div class="final-result" id="final-result"></div>
+      <div class="leaderboard" id="leaderboard"></div>
+      <button id="reset-btn">Reset Game</button>
+      <button id="share-btn">Share Results</button>
+      <button id="clear-leaderboard-btn">Clear Leaderboard</button>
+
+      <div class="popup" id="popup">
+        <p>You Win!</p>
+      </div>
+      <div class="popup" id="lose-popup">
+        <p>You Lose!</p>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
